@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home Finder Website</title>
     <link rel="stylesheet" href="../CSS/style.css" />
     <link
       rel="stylesheet"
@@ -15,7 +15,9 @@
     <header>
       <nav class="container main-nav">
         <div class="main-logo">
-          <img src="../IMAGE/logo.png" alt="realstateaustralia" />
+          <a href="index.html">
+            <img src="../IMAGE/logo.png" alt="realstateaustralia" />
+          </a>
         </div>
         <div class="nav-items">
           <ul>
@@ -26,6 +28,7 @@
             <li class="nav-item"><a href="">Area Guide</a></li>
             <li class="nav-item"><a href="">Room Finder</a></li>
             <li class="nav-item"><a href="">Home Finder</a></li>
+            <li class="nav-item"><a href="contact.html">Contact Us</a></li>
           </ul>
           <div class="signin">
             <a href="">Sign In</a>
@@ -33,6 +36,21 @@
         </div>
         <div class="menu">
           <span class="material-symbols-outlined"> menu </span>
+        </div>
+        <div class="off-canvas">
+          <div class="off-canvas-close">
+            <span class="material-symbols-outlined"> close </span>
+          </div>
+          <ul>
+            <li class="nav-item"><a href="">Buy</a></li>
+            <li class="nav-item"><a href="">Rent</a></li>
+            <li class="nav-item"><a href="">Seminars</a></li>
+            <li class="nav-item"><a href="">Blog</a></li>
+            <li class="nav-item"><a href="">Area Guide</a></li>
+            <li class="nav-item"><a href="">Room Finder</a></li>
+            <li class="nav-item"><a href="">Home Finder</a></li>
+            <li class="nav-item"><a href="contact.html">Contact Us</a></li>
+          </ul>
         </div>
       </nav>
     </header>
@@ -78,6 +96,11 @@
                 </div>
                 <div class="hero-btn">
                   <input type="search" placeholder="search" />
+                  <a href="listing.html" class="search-all">
+                    <span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -114,8 +137,7 @@
                 </div>
                 <div class="q-title">Short-term Apartments</div>
               </div>
-            </div>
-            <div class="row">
+
               <div class="qf-cards">
                 <div class="q-icon">
                   <span class="material-symbols-outlined"> bed </span>
@@ -336,12 +358,15 @@
             </ul>
           </div>
         </div>
-        
       </div>
-      
     </footer>
     <div class="copyright">
-        <p>© Copyright 2022 realstateaustralia. All rights reserved Powered by realstateaustralia.com</p>
+      <p>
+        © Copyright 2022 realstateaustralia. All rights reserved Powered by
+        realstateaustralia.com
+      </p>
     </div>
+
+    <script src="/js/script.js"></script>
   </body>
 </html>

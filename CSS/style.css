@@ -13,12 +13,15 @@ body {
   max-width: 1320px;
   margin: auto;
 }
+.nav-items ul li {
+  font-size: 14px;
+}
 
 .row {
   display: flex;
   width: 100%;
   flex-wrap: nowrap;
-  width: 100%;
+  padding: 0 10px;
 }
 
 .main-nav {
@@ -40,7 +43,7 @@ body {
 .nav-items ul {
   display: flex;
   list-style: none;
-  gap: 15px;
+  gap: 16px;
   color: gray;
 }
 
@@ -61,6 +64,7 @@ a {
 
 .menu {
   display: none;
+  cursor: pointer;
 }
 
 .hero {
@@ -136,8 +140,52 @@ img {
 .hero-form {
   display: flex;
   gap: 20px;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
+.off-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f4;
+  padding: 40px 10px 40px;
+  transform: translateX(100%);
+  transition: all 500ms ease-in-out;
+}
+
+.off-canvas.show {
+  transform: translateX(0);
+}
+
+.off-canvas-close {
+  text-align: right;
+  cursor: pointer;
+}
+
+.off-canvas-close span {
+  font-size: 28px;
+}
+
+.off-canvas ul {
+  padding: 0 40px;
+  list-style-type: none;
+  margin-top: 50px;
+}
+
+.off-canvas li {
+  font-size: 22px;
+  margin: 20px 0;
+  border-bottom: 0.5px solid rgb(189, 189, 189);
+}
+
+.off-canvas li a {
+  color: black;
+}
 /* quick-find */
 
 .quick-find {
@@ -156,10 +204,12 @@ img {
 .quick-find .row {
   gap: 10px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .qf-cards {
-  width: calc(25% - 30px);
+  width: calc(25% - 8px);
+  min-width: 300px;
   display: flex;
   gap: 2px;
 }
@@ -297,6 +347,7 @@ img {
 
 .fh-cards .cards {
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .property-body {
@@ -399,13 +450,13 @@ footer li {
   header {
     padding: 0 10px;
   }
-  main {
-    padding: 0 10px;
-  }
+
   .menu {
     display: block;
   }
-
+  .nav-items {
+    display: none;
+  }
   .hero {
     height: auto;
   }
@@ -418,10 +469,6 @@ footer li {
   }
   .hero-title h2 {
     font-size: 28px;
-  }
-
-  .nav-items {
-    display: none;
   }
 
   .hero-form,
@@ -487,5 +534,332 @@ footer li {
 
   footer .list {
     margin-top: 50px;
+  }
+  
+  .property-card{
+    flex-direction: column;
+  }
+
+  .property-card > *{
+    width: 100%!important;
+  }
+
+  .property-image{
+  max-height: max-content!important;
+  }
+
+  .details-content{
+    flex-direction: column-reverse;
+  }
+
+  .details-content .right,
+  .details-content .left{
+    width: 100%!important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  header {
+    padding: 0 10px;
+  }
+
+  .menu {
+    display: block;
+  }
+  .nav-items {
+    display: none;
+  }
+  .quick-find .row {
+    justify-content: center;
+  }
+  .property-body {
+    width: calc(50% - 10px);
+  }
+  footer .list {
+    width: calc(33.33% - 10px) !important;
+  }
+
+  
+}
+
+/* Contact Page */
+.nav-items ul li a.active {
+  color: green;
+  font-weight: bold;
+  border-bottom: 2px solid green;
+}
+
+/* Overall body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* Light background for contrast */
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for the contact form */
+.contact-container {
+  background-color: #ffffff; /* White background for the form */
+  padding: 40px; /* Increased padding for better spacing */
+  margin: 20px auto; /* Center the form on the page */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+  max-width: 500px; /* Limiting the width for better readability */
+  text-align: left; /* Align text to the left */
+}
+
+/* Heading style */
+.contact-container h2 {
+  color: #4caf50; /* Vibrant green color */
+  text-align: center; /* Center the heading */
+  margin-bottom: 30px; /* Space below the heading */
+  font-size: 24px; /* Increased font size */
+}
+
+/* Label styles */
+label {
+  display: block; /* Each label takes a full line */
+  margin-bottom: 8px; /* Space below each label */
+  color: #333; /* Dark gray color for better readability */
+  font-weight: bold; /* Bold text for labels */
+  font-size: 16px; /* Font size for labels */
+}
+
+/* Input field styles */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: 100%; /* Full width of the container */
+  padding: 12px; /* Padding inside the input */
+  margin-bottom: 20px; /* Space below each input */
+  border: 2px solid #4caf50; /* Green border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size for inputs */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+/* Change border color on focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+  border-color: #45a049; /* Darker green when focused */
+  box-shadow: 0 0 5px rgba(69, 160, 73, 0.5); /* Soft glow effect */
+  outline: none; /* Remove default outline */
+}
+
+/* Styles for the submit button */
+button[type="submit"] {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text color */
+  border: none; /* No border */
+  padding: 12px 20px; /* Padding inside the button */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 18px; /* Increased font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* Change button background on hover */
+button[type="submit"]:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  button[type="submit"] {
+    width: 100%; /* Full width for the button */
+  }
+}
+.thanks {
+  text-align: center;
+  margin: 20px auto;
+  padding: 30px;
+  max-width: 600px; /* Limiting the width for better readability */
+}
+
+h1 {
+  color: green; /* Blue color for the heading */
+  margin-bottom: 20px; /* Space below the heading */
+  font-size: 2.5em; /* Larger font size for emphasis */
+}
+
+p {
+  font-size: 1.2em; /* Slightly larger font for better readability */
+  line-height: 1.6; /* Line height for better spacing */
+  color: #333; /* Dark gray color for text */
+  margin: 10px 0; /* Space above and below each paragraph */
+}
+
+strong {
+  color: green; /* Blue color for strong emphasis (labels) */
+}
+
+span {
+  color: #555; /* Gray color for displayed data */
+  font-weight: 600; /* Slightly bolder for visibility */
+}
+
+
+.listing{
+  border-block: 2px solid rgb(217, 217, 217);
+}
+
+.listing-title{
+  max-width: 1320px;
+  margin: auto;
+}
+
+.listing h2{
+  background-color: #45a049;
+  width: fit-content;
+  padding: 5px 50px;
+  font-size: 18px;
+  color: white;
+  font-weight: normal;
+}
+.property-list{
+  max-width: 1320px;
+  margin: 50px auto;
+}
+
+.property-list .row{
+  flex-direction: column;
+  gap: 50px;
+}
+
+.property-card{
+  display: flex;
+  max-width: 900px;
+  border: 2px solid green;
+}
+
+.property-image{
+  width: 40%;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.property-content {
+  width: 60%;
+  border-left: 2px solid rgb(213, 213, 213);
+}
+
+.property-title{
+  color: #45a049;
+}
+
+.property-title,
+.listing-item{
+  padding: 10px;
+  border-bottom: 2px solid rgb(217, 217, 217);
+}
+
+.listing-item{
+  color: rgb(141, 141, 141);
+}
+
+.property-content .details{
+  width: 100%;
+  background-color: #45a049;
+  color: white;
+  text-align: center;
+}
+
+.property-content .details a{
+  color: white;
+  padding: 10px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.details-pg{
+  max-width: 1320px;
+  margin:50px auto;
+}
+
+.details-card{
+  max-width: 900px;
+  background-color: white;
+}
+
+.details-card .heading{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.details-content{
+  display: flex;
+}
+
+.details-content .left{
+  width: 40%;
+  margin: 10px;
+ height: fit-content;
+  border: 1px solid #45a049;
+}
+
+.details-content .left form{
+  padding: 10px;
+}
+
+.inquiry button{
+  background-color: red;
+  width: 100%;
+  color: white;
+  padding: 5px 0;
+  border: none;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.details-content p{
+  background-color: #45a049;
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+.details-content .right{
+  border-left: 2px solid #dcdcdc;
+  width: 60%;
+}
+
+.details-content .right .listitem{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 2px solid rgb(225, 225, 225);
+}
+
+.details-content .right .listitem .sec{
+  font-weight: 200!important;
+  color: gray;
+}
+
+.details-content .right .listitem.heading{
+  background-color: #45a049;
+  color: white;
+}
+
+
+@media (max-width:1320px){
+  .property-list .row{
+    align-items: center;
+  }
+
+  .details-card{
+    margin: auto;
+  }
+
+  .listing-title{
+    display: flex;
+    justify-content: center;
   }
 }
